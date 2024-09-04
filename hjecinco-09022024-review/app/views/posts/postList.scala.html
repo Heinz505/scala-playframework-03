@@ -1,0 +1,22 @@
+@import domain.Post
+@import play.api.mvc._
+@import play.api.i18n._
+@import helper._
+
+@(posts: Seq[Post])(implicit messages: Messages)
+
+@main("Post List") {
+  <h1>Posts</h1>
+
+  <ul>
+    @for(post <- posts) {
+      <li>
+        <p>@post.postText</p>
+        @post.imgUrl.map { url =>
+          <img src="@url" alt="Post Image" style="max-width: 300px; max-height: 200px;"/>
+        }
+        <a href="@routes.PostController.getPost(post.id)">View Post</a>
+      </li>
+    }
+  </ul>
+}

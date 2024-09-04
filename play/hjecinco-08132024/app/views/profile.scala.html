@@ -1,0 +1,11 @@
+@(profileForm: Form[Profile])(implicit messages: Messages)
+
+@import helper._
+
+@helper.form(action = routes.ProfileController.createProfile()) {
+  @helper.inputText(profileForm("firstName"))
+  @helper.inputText(profileForm("middleName"))
+  @helper.inputText(profileForm("lastName"))
+  @helper.inputText(profileForm("age"))
+  <button type="submit">Submit</button>
+}

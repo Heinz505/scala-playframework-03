@@ -1,0 +1,16 @@
+@import domain.Post
+@import play.api.mvc._
+@import play.api.i18n._
+
+@(post: Post)(implicit messages: Messages)
+
+@main("Post Details") {
+  <h1>Post Details</h1>
+
+  <p>@post.postText</p>
+  @post.imgUrl.map { url =>
+    <img src="@url" alt="Post Image" style="max-width: 600px; max-height: 400px;"/>
+  }
+  
+  <a href="@routes.PostController.getPost(post.id)">Back to Posts</a>
+}

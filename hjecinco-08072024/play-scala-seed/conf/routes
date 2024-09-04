@@ -1,0 +1,11 @@
+# User Routes
+POST   /api/register           controllers.UserController.registerUser
+PUT    /api/user/:userId        controllers.UserController.updateUser(userId: Long)
+POST   /api/login              controllers.UserController.loginUser
+POST   /api/logout             controllers.UserController.logoutUser
+
+# Order Routes
+POST   /api/orders             controllers.OrderController.placeOrder
+GET    /api/orders/user/:userId controllers.OrderController.getOrderHistory(userId: Long)
+GET    /api/orders/:orderId    controllers.OrderController.getOrderDetails(orderId: String)
+DELETE /api/orders/:orderId    controllers.OrderController.cancelOrder(orderId: String)

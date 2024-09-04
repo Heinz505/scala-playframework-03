@@ -1,0 +1,29 @@
+/*
+
+@(todos: Seq[models.Todo])(implicit messages: Messages)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <ul>
+        @for(todo <- todos) {
+            <li>
+                @todo.task - @if(todo.status) { <span>(Completed)</span> }
+                <form action="@routes.TodoController.deleteTodo(todo.id.get)" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        }
+    </ul>
+    <form action="@routes.TodoController.createTodo()" method="post">
+        <input type="text" name="task" placeholder="New Task"/>
+        <input type="submit" value="Add Task"/>
+    </form>
+</body>
+</html>
+
+*/

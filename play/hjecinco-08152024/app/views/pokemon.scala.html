@@ -1,0 +1,15 @@
+@(pokemon: models.domain.Pokemon)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokemon Details</title>
+</head>
+<body>
+    <h1>@pokemon.name</h1>
+    <p>ID: @pokemon.id</p>
+    <p>Height: @pokemon.height decimeters</p>
+    <p>Weight: @pokemon.weight hectograms</p>
+    <p>Types: @pokemon.types.mkString(", ")</p>
+</body>
+</html>

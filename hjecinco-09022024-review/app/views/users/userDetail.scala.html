@@ -1,0 +1,14 @@
+@import domain.User
+@import play.api.mvc._
+@import play.api.i18n._
+
+@(user: User)(implicit messages: Messages)
+
+@main("User Details") {
+  <h1>User Details</h1>
+
+  <p>Username: @user.username</p>
+  <!-- Other user details can be added here -->
+
+  <a href="@routes.UserController.getUser(user.id)">Back to Users</a>
+}

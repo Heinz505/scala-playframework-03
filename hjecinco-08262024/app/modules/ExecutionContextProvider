@@ -1,0 +1,10 @@
+package modules
+
+import com.google.inject.{Inject, Provider}
+import play.api.libs.concurrent.ExecutionContexts
+
+import scala.concurrent.ExecutionContext
+
+class ExecutionContextProvider @Inject()(executionContexts: ExecutionContexts) extends Provider[ExecutionContext] {
+  override def get(): ExecutionContext = executionContexts.defaultContext
+}

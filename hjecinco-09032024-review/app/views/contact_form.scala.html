@@ -1,0 +1,17 @@
+@import helper._
+@import forms._
+@(contactForm: Form[ContactData])(implicit messages: Messages)
+
+<!--  change userPost  -->
+@helper.form(action = routes.ContactController.addContact()) { 
+  @helper.inputText(contactForm("firstName"))
+  @helper.inputText(contactForm("middleName"))
+  @helper.inputText(contactForm("lastName"))
+  @helper.inputText(contactForm("phoneNumber"))
+  @helper.inputText(contactForm("email"))
+  <button type="submit"> Save </button>
+} 
+
+
+
+

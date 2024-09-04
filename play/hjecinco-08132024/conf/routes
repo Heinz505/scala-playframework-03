@@ -1,0 +1,14 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# User routes
+GET     /user/create    controllers.UserController.showUserForm
+POST    /user           controllers.UserController.createUser
+
+# Profile routes
+GET     /profile/create controllers.ProfileController.showProfileForm
+POST    /profile        controllers.ProfileController.createProfile()
+
+# Asset routes
+GET     /assets/*file   controllers.Assets.versioned(file: String)

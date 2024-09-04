@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fakebook App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="newsFeed">
+      <form id="createForm" class="newsFeedBlock">
+          <input type="text" id="createInput" placeholder="Create post ...">
+          <button type="submit">Add Post</button>
+      </form>
+      <ul id="postList">
+          <!-- News Feed -->
+          <li class="newsFeedBlock">
+            <section>
+              <div id = "postHeader">
+                <span id="postUserName">Maverick</span>
+                <span id="postDate">09292022</span>
+              </div>
+              <article id="postContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.</article>
+            </section>
+            <section id = "commentSection">
+              <div id="commentContainer">
+                <span id="commentContent">Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. </span>
+                <div id="commentDetails">
+                  <span id="commentUserName"></span>
+                  <span id="commentDate"></span>
+                </div>
+              </div>
+              <div id="commentAdd">
+                <input type="text" id="commentInput"placeholder="Comment here ...">
+                <button type="submit">Add Comment</button>
+                
+              </div>
+            </section>
+          </li>
+      </ul>
+    </div>
+  <script src=""></script>
+</body>
+</html> 

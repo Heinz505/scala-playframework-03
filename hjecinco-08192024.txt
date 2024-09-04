@@ -1,0 +1,5 @@
+#1 Insertion anomaly - If the instructor already resigned the course will still have the initial instructor’s name, not the new one.
+St
+
+
+#2

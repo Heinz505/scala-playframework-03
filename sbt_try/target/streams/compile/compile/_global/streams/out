@@ -1,0 +1,49 @@
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: /Users/hjecinco/practice/sbt_try/hjecinco-08022024.scala:16:32 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m16 |[0m  [33mval[0m [36mlessThan10[0m = books.filter(price<[31m10[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                Not found: price[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- Error: /Users/hjecinco/practice/sbt_try/hjecinco-08022024.scala:18:39 -------[0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m18 |[0m  [33mval[0m [36mclassicBooks[0m = books.filter(genre=[31m"Classic"[0m)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                  ^^^^^^^^^^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[33mmethod[0m [35mfilter[0m in [33mclass[0m [35mList[0m: (p: Book => Boolean): List[Book] does not have a parameter genre[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: /Users/hjecinco/practice/sbt_try/hjecinco-08022024.scala:20:34 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m20 |[0m  [33mval[0m [36mgroupByGenre[0m = books.sortBy(genre)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                  ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                  Not found: genre[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: /Users/hjecinco/practice/sbt_try/hjecinco-08022024.scala:22:27 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m22 |[0m  [33mval[0m [36mavePrice[0m = books.map(price.sum)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                           ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                           Not found: price[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E081] Type Error: /Users/hjecinco/practice/sbt_try/hjecinco-08022024.scala:24:33 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m24 |[0m  [33mval[0m [36mmostExpensife[0m = books.fold(_>_)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                 ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m   Missing parameter type[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m   I could not infer the type of the parameter _$1 of expanded function:[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m   (_$1, _$2) => _$1 > _$2.[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E081] Type Error: /Users/hjecinco/practice/sbt_try/hjecinco-08022024.scala:24:35 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m24 |[0m  [33mval[0m [36mmostExpensife[0m = books.fold(_>_)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                   ^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m   Missing parameter type[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m   I could not infer the type of the parameter _$2 of expanded function:[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m   (_$1, _$2) => _$1 > _$2.[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: /Users/hjecinco/practice/sbt_try/hjecinco-08022024.scala:26:45 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m26 |[0m  [33mval[0m [36mgroupByGenreSortByPrice[0m = books.sortBy(genre).sortBy(price)[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m                                             ^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m                                             Not found: genre[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m-- [E006] Not Found Error: /Users/hjecinco/practice/sbt_try/hjecinco-08022024.scala:83:8 [0m[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m83 |[0m        course -> grades.map(_._3).sum.toDouble / enrollments.size.toDouble[0m
+[0m[[0m[31merror[0m] [0m[0m[31m[31m   |[0m        ^^^^^^[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m        Not found: course[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m[0m
+[0m[[0m[31merror[0m] [0m[0m[31m   |[0m longer explanation available when compiling with `-explain`[0m
+[0m[[0m[31merror[0m] [0m[0m8 errors found[0m

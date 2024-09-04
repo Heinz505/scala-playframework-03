@@ -1,0 +1,11 @@
+@(userForm: Form[User])(implicit messages: Messages)
+
+@import helper._
+
+@main("Login") {
+  @helper.form(action = routes.UserController.loginSubmit()) {
+    @helper.inputText(userForm("username"))
+    @helper.inputPassword(userForm("password"))
+    <button type="submit">Login</button>
+  }
+}

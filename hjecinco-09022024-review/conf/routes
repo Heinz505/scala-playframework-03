@@ -1,0 +1,11 @@
+# Routes
+
+# Post routes
+GET     /posts                  controllers.PostController.getPostList()
+GET     /posts/:id              controllers.PostController.getPost(id: Long)
+
+# User routes
+GET     /users/:id              controllers.UserController.getUser(id: Long)
+
+# Assets
+GET     /assets/*file           controllers.Assets.versioned(path="/public", file: Asset)
