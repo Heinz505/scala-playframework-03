@@ -8,8 +8,8 @@ GET     /                           controllers.ContactController.listContacts()
 
 # Contact operations
 GET    /contact/add                 controllers.ContactController.addContact()
-POST    /contact/update/:id          controllers.ContactController.updateContact(id: Long)
-POST    /contact/delete/:id 		 controllers.ContactController.deleteContact(id: Long)
+POST    /contact/update/:id          controllers.ContactController.updateContact(id: Int)
+POST    /contact/delete/:id 		 controllers.ContactController.deleteContact(id: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

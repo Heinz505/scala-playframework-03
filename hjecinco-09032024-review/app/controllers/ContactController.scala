@@ -39,28 +39,47 @@ class ContactController @Inject()(
           Future.successful(BadRequest(views.html.contact_form(formWithErrors)))
           
         },
-        contact => {
-          Future.successful(Redirect(routes.ContactController.listContacts()))
+        data => {
+          val firstName = data.firstName
+          val middleName = data.middleName
+          val lastName = data.lastName
+          val phoneNumber = data.phoneNumber
+          val email = data.email
+
+          val contact = Contact(0, firstName, middleName, lastName, phoneNumber, email, None)
+
+          contactRepo.create(contact) map { _ =>
+            Redirect(routes.ContactController.listContacts())
+          }
         }
       )
   }
 
+  def updateContact(id: Int) = Action.async(parse.formUrlEncoded) { implicit request =>
+    contactForm
+      .bindFromRequest()
+      .fold(
+        formWithErrors => {
+          Future.successful(BadRequest(views.html.contact_form(formWithErrors)))
+          
+        },
+        data => {
+          val firstName = data.firstName
+          val middleName = data.middleName
+          val lastName = data.lastName
+          val phoneNumber = data.phoneNumber
+          val email = data.email
 
-  def updateContact(id: Long) = Action.async(parse.formUrlEncoded) { implicit request =>
-    val firstName = request.body.get("first_name").flatMap(_.headOption)
-    val middleName = request.body.get("middle_name").flatMap(_.headOption)
-    val lastName = request.body.get("last_name").flatMap(_.headOption)
-    val phoneNumber = request.body.get("phone_number").flatMap(_.headOption)
-    val email = request.body.get("email").flatMap(_.headOption)
+          val contact = Contact(0, firstName, middleName, lastName, phoneNumber, email, None)
 
-    val contact = Contact(Some(id), firstName, middleName, lastName, phoneNumber, email, None)
-
-    contactRepo.update(id, contact).map { _ =>
-      Redirect(routes.ContactController.listContacts())
-    }
+          contactRepo.update(contact) map { _ =>
+            Redirect(routes.ContactController.listContacts())
+          }
+        }
+      )
   }
 
-  def deleteContact(id: Long) = Action.async {
+  def deleteContact(id: Int) = Action.async {
     contactRepo.delete(id).map { _ =>
       Redirect(routes.ContactController.listContacts())
     }

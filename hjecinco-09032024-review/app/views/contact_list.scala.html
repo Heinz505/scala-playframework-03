@@ -16,13 +16,13 @@
     <tbody>
       @for(contact <- contacts) {
         <tr>
-          <td>@contact.firstName.getOrElse("")</td>
-          <td>@contact.middleName.getOrElse("")</td>
-          <td>@contact.lastName.getOrElse("")</td>
-          <td>@contact.phoneNumber.getOrElse("")</td>
-          <td>@contact.email.getOrElse("")</td>
+          <td>@contact.firstName</td>
+          <td>@contact.middleName</td>
+          <td>@contact.lastName</td>
+          <td>@contact.phoneNumber</td>
+          <td>@contact.email</td>
           <td>
-            <a href="@routes.ContactController.deleteContact(contact.id.get)">Delete</a>
+            <a href="@routes.ContactController.deleteContact(contact.id)">Delete</a>
           </td>
         </tr>
       }

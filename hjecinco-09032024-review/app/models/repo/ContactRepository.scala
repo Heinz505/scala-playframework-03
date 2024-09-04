@@ -20,20 +20,20 @@ class ContactRepository @Inject()(
   val contacts = TableQuery[Contacts]
 
   def create(contact: Contact): Future[Contact] = {
-    val insertQuery = contacts returning contacts.map(_.id) into ((contact, id) => contact.copy(id = Some(id)))
-    db.run(insertQuery += contact)
+    val insertQuery = contacts returning contacts += contact
+    db.run(insertQuery)
   }
 
   def list(): Future[Seq[Contact]] = db.run(contacts.result)
 
-  def findById(id: Long): Future[Option[Contact]] = db.run(contacts.filter(_.id === id).result.headOption)
+  def findById(id: Int): Future[Option[Contact]] = db.run(contacts.filter(_.id === id).result.headOption)
 
-  def update(id: Long, contact: Contact): Future[Int] = {
-    val query = contacts.filter(_.id === id).update(contact)
+  def update(contact: Contact): Future[Int] = {
+    val query = contacts.filter(_.id === contact.id).update(contact)
     db.run(query)
   }
 
-  def delete(id: Long): Future[Int] = {
+  def delete(id: Int): Future[Int] = {
     val query = contacts.filter(_.id === id).delete
     db.run(query)
   }
