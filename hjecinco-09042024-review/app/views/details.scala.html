@@ -1,0 +1,31 @@
+@(formName:String="",weight:Int=0,height:Int=0,img:String="",abilities:List[String]=Nil,moves:List[String]=Nil,err:String="")
+
+@index()
+
+@main("Pokemon Details") {
+    @if(err.length == 0) {
+        <div style="width: 100px; margin: auto; padding-top: 10px;">
+            <h3 style="margin: 0">@formName.toUpperCase</h3>
+            <img src="@img">
+            <h3 style="padding-left: 0; margin: 0;">Height:</h3>
+                <span style="padding-left: 10px; font-size: 0.9em;">@height</span>
+            <h3 style="padding-left: 0; margin: 10px 0 0 0;">Weight:</h3>
+                <span style="padding-left: 10px; font-size: 0.9em;">@weight</span>
+            <h3 style="margin: 10px 0 0 0">Abilities:</h3>
+                <ul style="list-style: none; padding-left: 5px; margin: 0; font-size: 0.9em;">
+                @for(a <- abilities) {
+                    <li style="size: 12px; list-style-type: none;">@a</li>
+                }
+                </ul>
+            <h3 style="margin: 10px 0 0 0">Moves:</h3>
+                <ul style="list-style: none; padding-left: 5px; margin: 0; font-size: 0.9em;">
+                @for(m <- moves) {
+                    <li style="size: 12px; list-style-type: none;">@m</li>
+                }
+                </ul>
+            
+        } else {
+            <h3>@err</h3>
+        }
+        </div>
+}

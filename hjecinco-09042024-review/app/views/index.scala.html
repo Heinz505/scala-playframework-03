@@ -1,5 +1,17 @@
 @()
 
-@main("Welcome to Play") {
-  <h1>Welcome to Play!</h1>
+@main("Pokedex App") {
+
+
+    <label>Find Pokemon</label>
+    <input type="text" id="inputURL">
+    <button OnClick="buttonClick()" style="background-color: yellow;">Let's go!</button>
+    <hr>
+
+    <script>
+        function buttonClick(){
+            var path = "/pokemon/"+document.getElementById("inputURL").value;
+            window.location.href = path;
+        }
+    </script>
 }
